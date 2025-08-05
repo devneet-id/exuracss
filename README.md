@@ -1,16 +1,33 @@
-# E X U R A
+# E X U R A . C S S
 
-EXURA is a modern CSS framework designed to break away from traditional class-based styling. Instead of relying on class names, EXURA introduces a unique approach by using attribute selectors to apply styles, making your HTML cleaner, more semantic, and easier to read.
+**Exura.css** is a modern, semantic-first CSS framework that reimagines how you style the web.  
+Forget the noise of long class names — Exura brings a **cleaner**, more **declarative** approach using **attribute-based styling**.
 
-## Key Features:
-- 🌀 Attribute-Based Styling: Use custom HTML attributes instead of long class names.
-- 🧼 Cleaner Markup: Enhance readability by reducing clutter in your HTML.
-- ⚡ Lightweight & Fast: Optimized for performance and minimal footprint.
-- 🔧 Highly Customizable: Flexible design system that adapts to your project’s need
+Designed for simplicity and scalability, Exura.css helps you build beautiful interfaces with clean, readable HTML.
 
-## Example:
+## ✨ Key Features
+
+- 🌀 **Attribute-Based Styling**  
+  Use custom HTML attributes instead of traditional classes for maximum clarity.
+
+- 🧼 **Cleaner Markup**  
+  Eliminate clutter with semantic, expressive HTML.
+
+- ⚡ **Lightweight & Fast**  
+  Built for performance — no heavy resets or bloated stylesheets.
+
+- 🔧 **Fully Customizable**  
+  Adapt Exura to your own design system with ease.
+
+## 🔍 Example
+
 ```html
-<button button="btn primary">Click Me</button>
+<!-- component -->
+<button button="primary">Click Me</button>
+
+<!-- intuitive grid with flex & width -->
+<div flex="wrap">
+  <div size="w-1/2">50%</div>
+  <div size="w-1/2">50%</div>
+</div>
 ```
-Simple, readable, and powerful — that’s the EXURA way.
-Perfect for developers who value clarity, maintainability, and innovation in frontend development.
