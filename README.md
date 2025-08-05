@@ -31,3 +31,6 @@ Designed for simplicity and scalability, Exura.css helps you build beautiful int
   <div size="w-1/2">50%</div>
 </div>
 ```
+
+Simple, readable, and powerful — that’s the EXURA way.
+Perfect for developers who value clarity, maintainability, and innovation in frontend development. ✨
