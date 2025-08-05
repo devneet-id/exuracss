@@ -1,0 +1,4 @@
+/* emoji */
+{% for name, art in EMOJI %}
+[clip~="{{ name }}"]::before { content: "{{ art }}"; }
+{% endfor %}

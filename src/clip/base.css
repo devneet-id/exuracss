@@ -1,0 +1,13 @@
+[clip] { 
+  font-style: normal; 
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+}
+[clip]::before { 
+  font-style: normal;
+  display: inline-block; 
+  transform: translate(0px, 0px);
+}
+
+

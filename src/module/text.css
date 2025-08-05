@@ -1,0 +1,44 @@
+/* TEXT ///////// */
+
+[text~="lighter"] { font-weight: lighter; }
+[text~="normal"] { font-weight: normal; }
+[text~="bold"] { font-weight: bold; }
+[text~="italic"] { font-style: italic; }
+
+[text~="start"] { text-align: left; }
+[text~="center"] { text-align: center; }
+[text~="end"] { text-align: right; }
+
+[text~="underline"] { text-decoration: underline; }
+[text~="uppercase"] { text-transform: uppercase; }
+[text~="lowercase"] { text-transform: lowercase; }
+
+[text~="nowrap"] { white-space: nowrap; }
+[text~="ellipsis"] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[text~="h1"] { font-size: var(--text-h1); display: block; }
+[text~="h2"] { font-size: var(--text-h2); display: block; }
+[text~="h3"] { font-size: var(--text-h3); display: block; }
+[text~="h4"] { font-size: var(--text-h4); display: block; }
+[text~="h5"] { font-size: var(--text-h5); display: block; }
+[text~="h6"] { font-size: var(--text-h6); display: block; }
+
+{% for root, value in COLOR %}
+[text~="{{ root }}"] { color: var(--color-{{ root }}); }
+{% for i in 1..10 %}
+[text~="{{ root }}:{{ i }}"] { color: var(--color-{{ root }}-{{ i }}); }
+{% endfor %}
+{% endfor %}
+
+{% set i = 0 %}
+{% for root, value in TEXT_DISPLAY %}
+[text~="display:{{ i+1 }}"] { font-size: {{value[1]}}; }
+@media (max-width: {{ SCREEN.md }}) {
+  [text~="display:{{ i+1 }}"] { font-size: {{value[0]}}; }
+}
+{% set i = i + 1 %}
+{% endfor %}

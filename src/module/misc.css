@@ -1,0 +1,56 @@
+/* 
+ * MISC
+ * */
+
+[misc~="d:none"] { display: none; }
+[misc~="d:block"] { display: block; }
+[misc~="d:inline-block"] { display: inline-block; }
+
+[misc~="p:static"] { position: static; }
+[misc~="p:absolute"] { position: absolute; }
+[misc~="p:fixed"] { position: fixed; }
+[misc~="p:sticky"] { position: sticky; }
+[misc~="p:relative"] { position: relative; }
+
+[misc~="z:0"] { z-index: 0; }
+[misc~="z:1"] { z-index: 100; }
+[misc~="z:2"] { z-index: 500; }
+[misc~="z:3"] { z-index: 1000; }
+[misc~="z:4"] { z-index: 1500; }
+[misc~="z:5"] { z-index: 2000; }
+
+[misc~="ws:wrap"] { white-space: wrap; }
+[misc~="ws:nowrap"] { white-space: nowrap; }
+[misc~="ws:pre"] { white-space: pre; }
+[misc~="ws:pre-line"] { white-space: pre-line; }
+[misc~="ws:pre-wrap"] { white-space: pre-wrap; }
+
+
+{% for screen, value in SCREEN %}
+@media (min-width: {{ value }}) {
+
+  [{{ screen }}\:misc~="d:none"] { display: none; }
+  [{{ screen }}\:misc~="d:block"] { display: block; }
+  [{{ screen }}\:misc~="d:inline-block"] { display: inline-block; }
+
+  [{{ screen }}\:misc~="p:static"] { position: static; }
+  [{{ screen }}\:misc~="p:absolute"] { position: absolute; }
+  [{{ screen }}\:misc~="p:fixed"] { position: fixed; }
+  [{{ screen }}\:misc~="p:sticky"] { position: sticky; }
+  [{{ screen }}\:misc~="p:relative"] { position: relative; }
+
+  [{{ screen }}\:misc~="z:0"] { z-index: 0; }
+  [{{ screen }}\:misc~="z:1"] { z-index: 100; }
+  [{{ screen }}\:misc~="z:2"] { z-index: 500; }
+  [{{ screen }}\:misc~="z:3"] { z-index: 1000; }
+  [{{ screen }}\:misc~="z:4"] { z-index: 1500; }
+  [{{ screen }}\:misc~="z:5"] { z-index: 2000; }
+
+  [{{ screen }}\:misc~="ws:wrap"] { white-space: wrap; }
+  [{{ screen }}\:misc~="ws:nowrap"] { white-space: nowrap; }
+  [{{ screen }}\:misc~="ws:pre"] { white-space: pre; }
+  [{{ screen }}\:misc~="ws:pre-line"] { white-space: pre-line; }
+  [{{ screen }}\:misc~="ws:pre-wrap"] { white-space: pre-wrap; }
+
+}
+{% endfor %}

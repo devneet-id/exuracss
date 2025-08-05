@@ -1,0 +1,57 @@
+
+/* SIZE ///////// */
+
+[size~="w:auto"] { width: auto; }
+[size~="w:full"] { width: 100%; }
+[size~="w:expand"] {width: auto; flex: 1;}
+
+[size~="h:auto"] { width: auto; }
+[size~="h:full"] { width: 100%; }
+[size~="h:expand"] {width: auto; flex: 1;}
+
+{% for item in SIZE_WH %}
+[size~="w:{{item[0]}}"] { width: var(--size-wh-{{ item[1] }}); }
+[size~="h:{{item[0]}}"] { height: var(--size-wh-{{ item[1] }}); }
+{% endfor %}
+
+
+{% for item in SIZE_PM %}
+[size~="p:{{ item[0] }}"] { padding: var(--size-pm-{{ item[1] }}); }
+[size~="m:{{ item[0] }}"] { margin: var(--size-pm-{{ item[1] }}); }
+{% for name, props in SIZE_PM_PREFIX %}
+[size~="p{{ name }}:{{ item[0] }}"] { {% for prop in props %} padding-{{prop}}: var(--size-pm-{{ item[1] }}); {% endfor %} }
+[size~="m{{ name }}:{{ item[0] }}"] { {% for prop in props %} margin-{{prop}}: var(--size-pm-{{ item[1] }}); {% endfor %} }
+{% endfor %}
+{% endfor %}
+
+
+
+
+{% for screen, value in SCREEN %}
+@media (min-width: {{ value }}) {
+
+  [{{screen}}\:size~="w:auto"] { width: auto; }
+  [{{screen}}\:size~="w:full"] { width: 100%; }
+  [{{screen}}\:size~="w:expand"] {width: auto; flex: 1;}
+
+  [{{screen}}\:size~="h:auto"] { width: auto; }
+  [{{screen}}\:size~="h:full"] { width: 100%; }
+  [{{screen}}\:size~="h:expand"] {width: auto; flex: 1;}
+
+{% for item in SIZE_WH %}
+  [{{screen}}\:size~="w:{{item[0]}}"] { width: var(--size-wh-{{ item[1] }}); }
+  [{{screen}}\:size~="h:{{item[0]}}"] { height: var(--size-wh-{{ item[1] }}); }
+{% endfor %}
+
+
+{% for item in SIZE_PM %}
+  [{{screen}}\:size~="p:{{ item[0] }}"] { padding: var(--size-pm-{{ item[1] }}); }
+  [{{screen}}\:size~="m:{{ item[0] }}"] { margin: var(--size-pm-{{ item[1] }}); }
+{% for name, props in SIZE_PM_PREFIX %}
+  [{{screen}}\:size~="p{{ name }}:{{ item[0] }}"] { {% for prop in props %} padding-{{prop}}: var(--size-pm-{{ item[1] }}); {% endfor %} }
+  [{{screen}}\:size~="m{{ name }}:{{ item[0] }}"] { {% for prop in props %} margin-{{prop}}: var(--size-pm-{{ item[1] }}); {% endfor %} }
+{% endfor %}
+{% endfor %}
+
+}
+{% endfor %}

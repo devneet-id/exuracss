@@ -1,0 +1,65 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table th, 
+table td {
+  padding: var(--size-pm-1) var(--size-pm-3);
+  text-align: left;
+  white-space: nowrap;
+}
+table th {
+  letter-spacing: .04rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+table tbody tr:hover {
+  cursor: pointer;
+  background-color: var(--color-default-1);
+}
+body[dark] table tbody tr:hover {
+  cursor: pointer;
+  background-color: var(--color-default-1);
+}
+
+[table="ring"] {
+  border: 1px solid var(--color-default-2);
+}
+[table="ring"] td,
+[table="ring"] th {
+  border: 1px solid var(--color-default-2);
+}
+
+[table="ring:x"] {
+  border: none;
+}
+[table="ring:x"] th,
+[table="ring:x"] td {
+  border: none;
+  border-right: 1px solid var(--color-dark-1);
+}
+[table="ring:x"] th:nth-last-child(1),
+[table="ring:x"] td:nth-last-child(1) {
+  border: none;
+}
+
+[table="ring:y"] {
+  border: none;
+}
+[table="ring:y"] th,
+[table="ring:y"] td {
+  border: none;
+}
+[table="ring:y"] tr {
+  border-bottom: 1px solid var(--color-dark-1);
+}
+[table="ring:y"] tr:nth-last-child(1) td {
+  border: none;
+}
+[table="ring:y"] tfoot {
+  border-top: 1px solid var(--color-dark-1);
+}
+[table="ring:y"] tfoot tr {
+  border-bottom: none;
+}

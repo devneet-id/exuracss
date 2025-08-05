@@ -1,0 +1,40 @@
+
+
+/* LIST ///////// */
+
+[list]:not(input) {
+  list-style-position: outside;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+[list]:not([type]) {
+  list-style-type: none;
+}
+[list] > * {
+  padding: var(--size-pm-1) var(--size-pm-1);
+  margin-bottom: 0;
+}
+[list~="wrap"] {
+  flex-wrap: wrap;
+}
+
+[list~="dir:y"] {
+  flex-direction: column;
+}
+[list~="dir:x"] {
+  flex-direction: row !important;
+}
+
+[list~="ring:y"] > * {
+  border-bottom: 1px solid var(--color-default-2);
+}
+[list~="ring:y"] > *:nth-last-child(1) {
+  border-bottom: none;
+}
+[list~="ring:x"] > * {
+  border-right: 1px solid var(--color-default-2);
+}
+[list~="ring:x"] > *:nth-last-child(1) {
+  border-right: none;
+}

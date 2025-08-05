@@ -1,0 +1,482 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "6b26f9d6e396c81234b8a1ae485ca88b",
+    "packages": [
+        {
+            "name": "devneet/rune",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devneet-id/rune.git",
+                "reference": "b8a491573570a1d62f6acab2c737598252f2ac09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devneet-id/rune/zipball/b8a491573570a1d62f6acab2c737598252f2ac09",
+                "reference": "b8a491573570a1d62f6acab2c737598252f2ac09",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rune\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AnwarAchilles",
+                    "email": "hudorianwar07@gmail.com"
+                },
+                {
+                    "name": "DEVNEET Team",
+                    "email": "opensource@devneet.org"
+                }
+            ],
+            "description": "Rune is a lore-driven, modular concept beneath PHP, designed not to dictate development — but to respond to it.",
+            "support": {
+                "issues": "https://github.com/devneet/rune/issues",
+                "source": "https://github.com/devneet/rune"
+            },
+            "time": "2025-08-02T13:23:42+00:00"
+        },
+        {
+            "name": "hexydec/cssdoc",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hexydec/cssdoc.git",
+                "reference": "c955fa047217cf76d730744722fef3839b22ff42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hexydec/cssdoc/zipball/c955fa047217cf76d730744722fef3839b22ff42",
+                "reference": "c955fa047217cf76d730744722fef3839b22ff42",
+                "shasum": ""
+            },
+            "require": {
+                "hexydec/tokenise": "1.0.3",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Will Earp",
+                    "email": "will@hexydec.com",
+                    "homepage": "https://github.com/hexydec"
+                }
+            ],
+            "description": "A token based CSS Document parser and minifier written in PHP",
+            "homepage": "https://github.com/hexydec/cssdoc",
+            "keywords": [
+                "compiler",
+                "css",
+                "minifier",
+                "minify",
+                "parser",
+                "stylesheet"
+            ],
+            "support": {
+                "issues": "https://github.com/hexydec/cssdoc/issues",
+                "source": "https://github.com/hexydec/cssdoc/tree/1.2.2"
+            },
+            "time": "2025-07-15T21:23:58+00:00"
+        },
+        {
+            "name": "hexydec/tokenise",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hexydec/tokenise.git",
+                "reference": "39e8f98ebb420dbfeb3bf0e41fbaf1cc1c3eef50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hexydec/tokenise/zipball/39e8f98ebb420dbfeb3bf0e41fbaf1cc1c3eef50",
+                "reference": "39e8f98ebb420dbfeb3bf0e41fbaf1cc1c3eef50",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.12",
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Will Earp",
+                    "email": "will@hexydec.com",
+                    "homepage": "https://github.com/hexydec"
+                }
+            ],
+            "description": "A program for performing lexical analysis, written in PHP",
+            "homepage": "https://github.com/hexydec/tokenise",
+            "keywords": [
+                "lexical",
+                "lexing",
+                "parser",
+                "tokenisation",
+                "tokeniser",
+                "tokenization",
+                "tokenizer"
+            ],
+            "support": {
+                "issues": "https://github.com/hexydec/tokenise/issues",
+                "source": "https://github.com/hexydec/tokenise/tree/1.0.3"
+            },
+            "time": "2025-07-15T16:08:27+00:00"
+        },
+        {
+            "name": "symfony/deprecation-contracts",
+            "version": "v3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/63afe740e99a13ba87ec199bb07bbdee937a5b62",
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
+                "branch-alias": {
+                    "dev-main": "3.6-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-25T14:21:43+00:00"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.32.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "provide": {
+                "ext-ctype": "*"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.32.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-09T11:45:10+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.32.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6d857f4d76bd4b343eac26d6b539585d2bc56493",
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": ">=7.2"
+            },
+            "provide": {
+                "ext-mbstring": "*"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.32.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-12-23T08:48:59+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v3.21.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "285123877d4dd97dd7c11842ac5fb7e86e60d81d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/285123877d4dd97dd7c11842ac5fb7e86e60d81d",
+                "reference": "285123877d4dd97dd7c11842ac5fb7e86e60d81d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1.0",
+                "symfony/deprecation-contracts": "^2.5|^3",
+                "symfony/polyfill-ctype": "^1.8",
+                "symfony/polyfill-mbstring": "^1.3"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2.0",
+                "psr/container": "^1.0|^2.0",
+                "symfony/phpunit-bridge": "^5.4.9|^6.4|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Resources/core.php",
+                    "src/Resources/debug.php",
+                    "src/Resources/escaper.php",
+                    "src/Resources/string_loader.php"
+                ],
+                "psr-4": {
+                    "Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Twig Team",
+                    "role": "Contributors"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "templating"
+            ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/v3.21.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-05-03T07:21:55+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "devneet/rune": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

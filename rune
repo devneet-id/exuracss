@@ -1,0 +1,168 @@
+<?php
+/**
+ * Act. 1 - Understanding Its Flow  
+ * THE AWAKENING ✦
+ * 
+ * From the silence of nothingness, echoes rise from the void.
+ * A journey begins — with runes at your side.
+ * 
+ * Run this script using:
+ *   $ php {file}
+ *   $ php {file} grimoire
+ */
+require_once __DIR__ . '/vendor/autoload.php';
+
+
+
+/**
+ * I N V O C A T I O N
+ * 
+ * Step 1 — Summon the runes:  
+ * Import each module's manifest.
+ * 
+ * Step 2 — Channel the energy:  
+ * Initialize ether, essence, and entity.
+ * 
+ * Note: Keep #sentinel markers if you're using Sentinel support.
+ */
+use Rune\Aether\Manifest as Aether;
+use Rune\Whisper\Manifest as Whisper;
+use Rune\Weaver\Manifest as Weaver;
+use Rune\Chanter\Manifest as Chanter;
+use Rune\Forger\Manifest as Forger;
+use Rune\Crafter\Manifest as Crafter;
+use Rune\Keeper\Manifest as Keeper;
+use Rune\Cipher\Manifest as Cipher;
+use Rune\Specter\Manifest as Specter;
+#sentinel-manifest
+
+Aether::ether()::essence()::entity();
+Whisper::ether()::essence()::entity();
+Weaver::ether()::essence()::entity();
+Chanter::ether()::essence()::entity();
+Forger::ether()::essence()::entity();
+Crafter::ether()::essence()::entity();
+Keeper::ether()::essence()::entity();
+Cipher::ether()::essence()::entity();
+Specter::ether()::essence()::entity();
+#sentinel-awaken
+
+
+/**
+ * I N C A N T A T I O N
+ * 
+ * This is your working space.  
+ * Use begin() and end() to define the active logic scope.
+ */
+Aether::begin();
+Chanter::begin();
+Keeper::begin();
+
+// ✦ Main logic lives here
+
+function hexToRgba($hex, $alpha = 1.0) {
+  $hex = ltrim($hex, '#');
+
+  // Format pendek (#abc) => panjangkan
+  if (strlen($hex) === 3) {
+    $hex = $hex[0] . $hex[0] .
+      $hex[1] . $hex[1] .
+      $hex[2] . $hex[2];
+  }
+
+  if (strlen($hex) !== 6) {
+    throw new InvalidArgumentException("Warna HEX tidak valid: $hex");
+  }
+
+  $r = hexdec(substr($hex, 0, 2));
+  $g = hexdec(substr($hex, 2, 2));
+  $b = hexdec(substr($hex, 4, 2));
+
+  return "rgba($r, $g, $b, $alpha)";
+}
+
+
+use Twig\Environment;
+use Twig\Loader\ArrayLoader;
+use Twig\TwigFunction;
+
+use hexydec\css\cssdoc;
+
+function middleware($source, $env) { 
+  $twig = new Environment(new ArrayLoader());
+  $twig->addFunction(new TwigFunction('hexToRgba', 'hexToRgba'));
+  $template = $twig->createTemplate($source);
+  return $template->render(json_decode(Forger::item($env), true));
+};
+
+
+Chanter::cast('build', function() {
+  Crafter::item('exura', function() {
+    Crafter::seed('DIST', __DIR__ . '/dist/exura.css');
+    Crafter::seed('TYPE', 'plain');
+    Crafter::seed('LANGUAGE', ['css']);
+
+    Crafter::shard('src/root.css');
+    Crafter::shard('src/reset.css');
+    Crafter::shard('src/base.css');
+
+    Forger::scan('src/module/', function($item) {
+      Crafter::shard($item->target);
+    });
+  });
+  
+  Crafter::spark('exura', function () {
+    global $CRAFTER_SPARK_DISTRIBUTE;
+
+    $source = $CRAFTER_SPARK_DISTRIBUTE;
+    $source = middleware($source, 'exura.json');
+    $source = str_replace("\n\n", "\n", $source);
+
+    if (Chanter::spell('min') == 'true') {
+      $min = new cssdoc();
+      $min->load($source);
+      $min->minify();
+      $minified = $min->compile();
+      Forger::item('dist/exura.min.css', $minified);
+    }
+
+    $CRAFTER_SPARK_DISTRIBUTE = $source;
+  });
+});
+
+Chanter::cast('build-clip', function() {
+  Crafter::item('exura-clip', function() {
+    Crafter::seed('DIST', __DIR__ . '/dist/exura-clip.css');
+    Crafter::seed('TYPE', 'plain');
+    Crafter::seed('LANGUAGE', ['css']);  
+
+    Crafter::shard('src/clip/base.css');
+    Crafter::shard('src/clip/data.css');
+    Crafter::shard('src/clip/effect.css');
+    Crafter::shard('src/clip/animate.css');
+  });
+  
+  Crafter::spark('exura-clip', function () {
+    global $CRAFTER_SPARK_DISTRIBUTE;
+
+    $rebase = $CRAFTER_SPARK_DISTRIBUTE;
+    $rebase = middleware($rebase, 'exura-clip.json');
+    $rebase = str_replace("\n\n", "\n", $rebase);
+
+    $CRAFTER_SPARK_DISTRIBUTE = $rebase;
+  });
+});
+
+
+Chanter::cast('watch', function() {
+  Chanter::cast('build')();
+  Specter::observer('src', function() {
+    Chanter::cast('build')();
+  });
+});
+
+
+#sentinel-codex
+Keeper::end();
+Chanter::end();
+Aether::end();

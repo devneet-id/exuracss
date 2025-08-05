@@ -1,0 +1,49 @@
+button, [button] {
+  letter-spacing: .04rem;
+  border: 0px solid transparent;
+  padding: var(--size-pm-1) var(--size-pm-2);
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+  color: inherit;
+  background-color: var(--color-default-3);
+}
+a[button] {
+  color: var(--color-primary);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+button:hover, button:focus,
+[button]:hover, [button]:focus {
+  background-color: var(--color-default-2);
+}
+a[button]:hover, a[button]:focus {
+  text-decoration: none;
+}
+
+[button~="none"] {
+  padding: 0;
+  background-color: transparent;
+}
+
+
+{% for name, value in COLOR %}
+{% if name == 'light' %}
+[button~="{{ name }}"] {
+  background-color: var(--color-{{ name }});
+  color: black;
+  box-shadow: 0 3px 5px 0 var(--color-{{ name }}-3);
+}
+{% else %}
+[button~="{{ name }}"] {
+  background-color: var(--color-{{ name }});
+  color: white;
+  box-shadow: 0 3px 5px 0 var(--color-{{ name }}-3);
+}
+{% endif %}
+[button~="{{ name }}"]:hover, [button~="{{ name }}"]:focus {
+  background-color: var(--color-{{ name }}-8) !important;
+  box-shadow: 0 4px 10px 0 var(--color-{{ name }}-6);
+}
+{% endfor %}

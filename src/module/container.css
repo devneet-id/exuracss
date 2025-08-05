@@ -1,0 +1,115 @@
+
+/* CONTAINER ///////// */
+
+[container] {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--size-pm-2);
+  padding-right: var(--size-pm-2);
+  box-sizing: border-box;
+}
+
+[container~="overflow"] {
+  overflow: auto;
+  padding: 0;
+  max-width: 99%;
+}
+
+[container~="fluid"] {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  [container]:not([container="fluid"]) {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  [container]:not([container="fluid"]) {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  [container]:not([container="fluid"]) {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  [container]:not([container="fluid"]) {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  [container]:not([container="fluid"]) {
+    max-width: 1536px;
+  }
+}
+
+
+{% for screen, value in SCREEN %}
+@media (min-width: {{ value }}) {
+
+  [{{ screen }}\:container] {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--size-pm-2);
+    padding-right: var(--size-pm-2);
+    box-sizing: border-box;
+  }
+
+  [{{ screen }}\:container~="overflow"] {
+    overflow: auto;
+    padding: 0;
+    max-width: 99%;
+  }
+
+  [{{ screen }}\:container~="fluid"] {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 640px) {
+    [{{ screen }}\:container]:not([{{ screen }}\:container="fluid"]) {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    [{{ screen }}\:container]:not([{{ screen }}\:container="fluid"]) {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    [{{ screen }}\:container]:not([{{ screen }}\:container="fluid"]) {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    [{{ screen }}\:container]:not([{{ screen }}\:container="fluid"]) {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    [{{ screen }}\:container]:not([{{ screen }}\:container="fluid"]) {
+      max-width: 1536px;
+    }
+  }
+  
+}
+{% endfor %}

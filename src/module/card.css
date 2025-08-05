@@ -1,0 +1,66 @@
+
+/* CARD ///////// */
+
+
+[card] {
+  padding: var(--size-pm-1) var(--size-pm-2);;
+}
+
+{% for root, invert in CARD %}
+[card="{{ root }}"] {
+  color: var(--color-{{ invert }});
+  background-color: var(--color-{{ root }});
+}
+{% for i in 1..10 %}
+[card="{{ root }}:{{ i }}"] {
+  color: var(--color-{{ invert }});
+  background-color: var(--color-{{ root }}-{{ i }});
+}
+{% endfor %}
+{% endfor %}
+
+
+/* 
+@each $color, $color-invert in $color-set {
+  [card="#{$color}"] {
+    color: var(--color-#{$color-invert});
+    background-color: var(--color-#{$color});
+  }
+}
+
+@each $size, $prefix in $screen {
+  @media (min-width: $prefix) {
+    [#{$size}\:card] {
+      padding: var(--size-padding-1) var(--size-padding-2);
+    }
+
+    [#{$size}\:card="default"] {
+      color: var(--color-dark);
+      background-color: var(--color-default);
+    }
+    body[dark] [#{$size}\:card="default"] {
+      color: var(--color-light);
+      background-color: var(--color-default-dark);
+    }
+
+    [#{$size}\:card="primary"] {
+      color: var(--color-light);
+      background-color: var(--color-primary);
+    }
+
+    [#{$size}\:card="secondary"] {
+      color: var(--color-light);
+      background-color: var(--color-secondary);
+    }
+
+    [#{$size}\:card="dark"] {
+      color: var(--color-light);
+      background-color: var(--color-dark);
+    }
+
+    [#{$size}\:card="light"] {
+      color: var(--color-dark);
+      background-color: var(--color-light);
+    }
+  }
+} */

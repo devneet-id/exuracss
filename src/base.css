@@ -1,0 +1,213 @@
+
+/* BASE ///////// */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  color: inherit;
+  box-sizing: border-box;
+  transition: all .05s ease-in-out;
+  overflow: visible;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-used);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+body[dark] {
+  color: var(--color-light);
+  background-color: var(--color-black);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  font-weight: 500;
+  margin-bottom: var(--size-pm-1-5);
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); }
+h5 { font-size: var(--text-h5); }
+h6 { font-size: var(--text-h6); }
+
+p {
+  margin: 0;
+  font-weight: 400;
+  margin-bottom: var(--size-pm-1);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-dark-2);
+}
+body[dark] hr {
+  border-top: 1px solid var(--color-light-2);
+}
+
+fieldset {
+  width: fit-content;
+  border: 1px solid var(--color-default-2);
+  padding: var(--size-pm-1) var(--size-pm-2-5);
+  box-sizing: border-box;
+}
+fieldset > legend {
+  color: var(--color-default);
+  letter-spacing: .04rem;
+  padding: var(--size-pm-0-5);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+u, ins, s, del {
+  text-decoration-color: #dc3b3b;
+  text-decoration-thickness: 2px;
+}
+s, del {
+  color: var(--color-default);
+}
+
+strong, em {
+  color: #dc3b3b;
+}
+
+q {
+  display: inline;
+  color: var(--color-default);
+  font-style: italic;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+
+
+abbr {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+abbr[title]::after {
+  content: " (" attr(title) ")";
+  font-size: var(--text-small);
+  color: var(--color-default);
+}
+
+address {
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+address p {
+  margin: 0;
+  padding: 0;
+}
+address a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+address a:hover {
+  text-decoration: underline;
+}
+
+cite {
+  font-style: italic;
+  color: var(--color-default);
+}
+cite::before {
+  content: "\2014";
+}
+
+blockquote {
+  position: relative;
+  font-style: italic;
+  color: var(--color-default);
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  /* background-color: var(--color-default-1); */
+}
+blockquote:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--color-default-3);
+  transform: translateY(-50%);
+}
+
+
+ul, ol {
+  padding-left: var(--size-pm-3);
+}
+ul li, ol li {
+  margin-bottom: var(--size-pm-1);
+}
+ol[type] li::marker,
+ul[type] li::marker {
+  color: var(--color-default);
+}
+
+small {
+  font-size: var(--text-small);
+}
+
+code {
+  font-family: var(--font-code);
+  font-size: 14px;
+  color: #df2163;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  border: 1px solid var(--color-default-5);
+  border-radius: 3px;
+  box-shadow: inset 0 -2px 0 var(--color-dark);
+}
+
+samp {
+  font-family: var(--font-code);
+  font-size: 14px;
+  background-color: var(--color-default-1);
+  padding: 2px 4px;
+  border: 1px solid var(--color-default-5);
+  border-radius: 3px;
+}
+
+var {
+  font-style: italic;
+}
+
+mark {
+  background-color: rgba(255, 250, 96, 0.3);
+}
+
+dd {
+  margin-inline-start: var(--size-pm-1);
+  margin-bottom: var(--size-pm-2);
+}

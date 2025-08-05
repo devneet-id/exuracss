@@ -1,0 +1,103 @@
+/* RUNE 1.0.15 | Created By @anwarachilles */
+[clip] { 
+  font-style: normal; 
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+}
+[clip]::before { 
+  font-style: normal;
+  display: inline-block; 
+  transform: translate(0px, 0px);
+}
+/* emoji */
+[clip~="rocket"]::before { content: "🚀"; }
+[clip~="fire"]::before { content: "🔥"; }
+[clip~="sparkles"]::before { content: "✨"; }
+[clip~="star"]::before { content: "⭐"; }
+[clip~="heart"]::before { content: "❤️"; }
+[clip~="broken-heart"]::before { content: "💔"; }
+[clip~="warning"]::before { content: "⚠️"; }
+[clip~="info"]::before { content: "ℹ️"; }
+[clip~="check"]::before { content: "✅"; }
+[clip~="cross"]::before { content: "❌"; }
+[clip~="question"]::before { content: "❓"; }
+[clip~="idea"]::before { content: "💡"; }
+[clip~="zap"]::before { content: "⚡"; }
+[clip~="boom"]::before { content: "💥"; }
+[clip~="clap"]::before { content: "👏"; }
+[clip~="wave"]::before { content: "👋"; }
+[clip~="skull"]::before { content: "💀"; }
+[clip~="ghost"]::before { content: "👻"; }
+[clip~="sleep"]::before { content: "😴"; }
+[clip~="smile"]::before { content: "😄"; }
+[clip~="sad"]::before { content: "😢"; }
+[clip~="angry"]::before { content: "😠"; }
+[clip~="cool"]::before { content: "😎"; }
+[clip~="cry"]::before { content: "😭"; }
+[clip~="nerd"]::before { content: "🤓"; }
+[clip~="eyes"]::before { content: "👀"; }
+[clip~="coffee"]::before { content: "☕"; }
+[clip~="tea"]::before { content: "🍵"; }
+[clip~="cookie"]::before { content: "🍪"; }
+[clip~="cake"]::before { content: "🎂"; }
+[clip~="pizza"]::before { content: "🍕"; }
+[clip~="burger"]::before { content: "🍔"; }
+[clip~="rice"]::before { content: "🍚"; }
+[clip~="ramen"]::before { content: "🍜"; }
+[clip~="bento"]::before { content: "🍱"; }
+[clip~="sushi"]::before { content: "🍣"; }
+[clip~="meat"]::before { content: "🍖"; }
+[clip~="fries"]::before { content: "🍟"; }
+[clip~="icecream"]::before { content: "🍦"; }
+[clip~="laptop"]::before { content: "💻"; }
+[clip~="keyboard"]::before { content: "⌨️"; }
+[clip~="gear"]::before { content: "⚙️"; }
+[clip~="hammer"]::before { content: "🔨"; }
+[clip~="bug"]::before { content: "🐞"; }
+[clip~="robot"]::before { content: "🤖"; }
+[clip~="lock"]::before { content: "🔒"; }
+[clip~="unlock"]::before { content: "🔓"; }
+[clip~="link"]::before { content: "🔗"; }
+[clip~="folder"]::before { content: "📁"; }
+[clip~="file"]::before { content: "📄"; }
+[clip~="up"]::before { content: "⬆️"; }
+[clip~="down"]::before { content: "⬇️"; }
+[clip~="left"]::before { content: "⬅️"; }
+[clip~="right"]::before { content: "➡️"; }
+[clip~="repeat"]::before { content: "🔁"; }
+[clip~="stop"]::before { content: "🛑"; }
+[clip~="play"]::before { content: "▶️"; }
+[clip~="pause"]::before { content: "⏸️"; }
+[clip~="fastforward"]::before { content: "⏩"; }
+[clip~="rewind"]::before { content: "⏪"; }
+[clip~="trophy"]::before { content: "🏆"; }
+[clip~="medal"]::before { content: "🎖️"; }
+[clip~="crown"]::before { content: "👑"; }
+[clip~="effect:icon"] { 
+  filter: grayscale(100%) contrast(2) brightness(1.2);
+}
+[dark] [clip~="effect:icon"] { 
+  filter: grayscale(100%) contrast(2) brightness(1.2) invert(100%);
+}
+[clip~="effect:isolate"] { 
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  background-color: var(--color-default-3); 
+  border-radius: 100%;
+}
+[clip~="effect:emboss"] {
+  filter: drop-shadow(1px 1px 0 var(--color-default-7)) drop-shadow(-1px -1px 0 var(--color-default-3));
+}
+[clip~="effect:ghost"] {
+  filter: brightness(1.1) blur(0.3px);
+  opacity: 0.85;
+}
+/* animate */
+[clip~="animate"]::before {
+  animation: clipRocket 0.6s ease-in-out infinite alternate;
+}
+@keyframes clipRocket {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
