@@ -1,7 +1,7 @@
 {
     "require": {
-        "devneet/rune": "dev-main",
         "twig/twig": "^3.21",
-        "hexydec/cssdoc": "^1.2"
+        "hexydec/cssdoc": "^1.2",
+        "devneet/rune": "^1.11"
     }
 }
