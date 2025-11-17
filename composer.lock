@@ -4,26 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b26f9d6e396c81234b8a1ae485ca88b",
+    "content-hash": "2fb1cd82cbe1ff1d0e3e5b00b4254c19",
     "packages": [
         {
             "name": "devneet/rune",
-            "version": "dev-main",
+            "version": "v1.11.84",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devneet-id/rune.git",
-                "reference": "b8a491573570a1d62f6acab2c737598252f2ac09"
+                "reference": "43c7989e496047732223f12670ced3bcb52daebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devneet-id/rune/zipball/b8a491573570a1d62f6acab2c737598252f2ac09",
-                "reference": "b8a491573570a1d62f6acab2c737598252f2ac09",
+                "url": "https://api.github.com/repos/devneet-id/rune/zipball/43c7989e496047732223f12670ced3bcb52daebb",
+                "reference": "43c7989e496047732223f12670ced3bcb52daebb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -49,7 +48,7 @@
                 "issues": "https://github.com/devneet/rune/issues",
                 "source": "https://github.com/devneet/rune"
             },
-            "time": "2025-08-02T13:23:42+00:00"
+            "time": "2025-10-02T22:35:03+00:00"
         },
         {
             "name": "hexydec/cssdoc",
@@ -471,12 +470,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "devneet/rune": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
