@@ -2,6 +2,6 @@
     "require": {
         "twig/twig": "^3.21",
         "hexydec/cssdoc": "^1.2",
-        "devneet/rune": "^1.11"
+        "devneet/rune": "^1.12"
     }
 }
