@@ -1,53 +1,83 @@
 # E X U R A . C S S
 
-**Exura.css** is a modern, semantic-first CSS framework that reimagines how you style the web.  
-Forget the noise of long class names — Exura brings a **cleaner**, more **declarative** approach using **attribute-based styling**.
+**Exura.css** is a semantic-first CSS framework: you style with **attributes**, not long class names.
+Part of the **Exura series** — the power of a modern CSS framework in a single, super-light stylesheet.
 
-Designed for simplicity and scalability, Exura.css helps you build beautiful interfaces with clean, readable HTML.
+```html
+<button button="primary">Save</button>
+```
 
 ## ✨ Key Features
 
-- 🌀 **Attribute-Based Styling**  
-  Use custom HTML attributes instead of traditional classes for maximum clarity.
+- 🌀 **Attribute-based styling** — every concern has its own attribute: `button`, `card`, `flex`, `size`, `ring`, `text`, `list`, `table`, `misc`.
+- 🧼 **Readable markup** — values read like a sentence: `flex="wrap j:between a:middle"`, `size="w:1/2 p:2"`.
+- 📱 **Responsive by prefix** — `md:size="w:1/3"` applies from the `md` breakpoint up.
+- 🌗 **Dark mode by color balancing** — one palette; every shade (`primary-1` … `primary-10`) is a transparent tint that blends with the background. Add `dark` to `<body>`, nothing else changes.
+- 🎨 **One token file** — colors, text sizes, breakpoints and spacing live in `exura.json`.
+- 😀 **Clip icons** — emoji icons as attributes (`<i clip="rocket animate"></i>`) in the separate `exura-clip.css`.
 
-- 🧼 **Cleaner Markup**  
-  Eliminate clutter with semantic, expressive HTML.
+## 📦 Install
 
-- ⚡ **Lightweight & Fast**  
-  Built for performance — no heavy resets or bloated stylesheets.
+Use the built files from `dist/` — no build step needed:
 
-- 🔧 **Fully Customizable**  
-  Adapt Exura to your own design system with ease.
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devneet-id/exuracss@1.x/dist/exura.min.css">
+<!-- optional: emoji icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devneet-id/exuracss@1.x/dist/exura-clip.css">
+```
 
 ## 🔍 Example
 
 ```html
-<!-- component -->
-<button button="primary">Click Me</button>
+<body dark>
 
-<!-- intuitive grid with flex & width -->
-<div flex="wrap">
-  <div size="w-1/2">50%</div>
-  <div size="w-1/2">50%</div>
-</div>
+  <div container>
+    <div flex="wrap j:between a:middle">
+      <div size="w:full" md:size="w:1/2">
+        <div card="primary:2" ring="b:full b:primary-5" size="p:2">
+          <span text="h4 bold primary">Exura</span>
+          <p text="default">Tinted card that balances on light and dark.</p>
+        </div>
+      </div>
+      <button button="primary">Click Me</button>
+    </div>
+  </div>
+
+</body>
 ```
 
-Simple, readable, and powerful — that’s the EXURA way.
-Perfect for developers who value clarity, maintainability, and innovation in frontend development. ✨
+| Attribute | Examples |
+|---|---|
+| `button` | `primary`, `secondary`, `dark`, `none` |
+| `card` | `primary`, `light`, `primary:3` (shade 1–10) |
+| `flex` | `wrap`, `d:column`, `j:between`, `a:middle`, `1` |
+| `size` | `w:1/2`, `w:full`, `h:1/4`, `p:2`, `mx:auto`, `pt:1.5` |
+| `ring` | `b:full`, `b:dashed`, `b:primary-5`, `o:full`, `s:full s:lg` |
+| `text` | `h1`…`h6`, `display:1`…`4`, `bold`, `center`, `primary`, `ellipsis` |
+| `misc` | `d:none`, `p:sticky`, `z:3`, `ws:nowrap` |
+| `list` / `table` | `ring:y`, `dir:x` / `ring`, `ring:x`, `ring:y` |
 
+## 🧩 The Exura Series
 
+Exura mirrors a modern CSS / JS / PHP framework — at a fraction of the weight, without losing the abilities of a framework.
 
-## 🛠️ BUILD WITH RUNE
+| Package | Focus | Repository |
+|---|---|---|
+| **exuracss** | modern semantic styling | [devneet-id/exuracss](https://github.com/devneet-id/exuracss) |
+| **exurajs** | modern reactive JavaScript | [devneet-id/exurajs](https://github.com/devneet-id/exurajs) |
+| **exuraphp** | modern HTTP API endpoints | [devneet-id/exuraphp](https://github.com/devneet-id/exuraphp) |
 
-**Exura** uses the **Rune** build engine.  
-Before getting started, we recommend reading the official documentation here:  
+## 🛠️ Shaped with Rune
+
+This project is shaped with **Rune** — a lore-driven, modular concept beneath PHP that responds to development rather than dictating it.  
+Its runite, `cast`, holds the casts that turn `src/` into `dist/`.  
 👉 <https://github.com/devneet-id/rune>
 
-Although in most cases you can simply run the available `build` commands, understanding the **Rune structure** will help you better track and manage post-processing tasks more efficiently.
+You can simply run the casts below; knowing how a runite works helps when you want to shape your own.
 
-Requirements, Make sure you have:
+Requirements:
 - **Composer** installed
-- **PHP version 8+**
+- **PHP version 8.1+**
 
 Then run this command:
 
@@ -55,31 +85,37 @@ Then run this command:
 composer install
 ```
 
-To view the main rune script:
+The runite of this project is `cast`. To view its main screen (all casts with notes):
 ```shell
-php rune
+php cast
 ```
 
 To build the project:
 ```shell
-php rune build
-php rune build --min=true
+php cast build
+php cast build --min=true
 ```
 
-Development mode (auto watch & build on changes):
+Build the emoji icon set (`dist/exura-clip.css`):
 ```shell
-php rune watch
+php cast build-clip
 ```
 
+Version (stored in the runite itself as `const VERSION`, applied on build):
+```shell
+php cast version
+php cast version --up            # 1.0.0 -> 1.0.1  (--up=minor | major | release)
+php cast version --pre           # 1.0.1 -> 1.0.1-dev  (--pre=beta.1)
+php cast version --set=1.0.0
+```
 
-## 🎯 G O A L
-Exura will:
-- Be fully integrated with **Rune** as its built-in build engine.
+## 🎯 Goal
 
-- Provide a targeted **preprocessing system**, similar to Tailwind CSS, but built entirely within the Rune ecosystem.
+Exura.css will:
 
-- Offer **unlimited flexibility** — supporting modern styling via class, attribute, or even the latest CSS features.
+- Generate **only what you use** — an on-demand cast that scans your HTML, in the spirit of utility-first frameworks.
+- Speak **one grammar** across all attributes, so every value can be combined the same way.
+- Keep **color balancing** at its core — one palette that works on any background.
+- Stay **light** and never become a burden for the developer.
 
-- Stay committed to **never becoming a burden** or bottleneck for developers.
-
-Instead, Exura exists to empower, not to interrupt
+Exura.css exists to empower, not to interrupt.
