@@ -8,9 +8,14 @@ button, [button] {
   color: inherit;
   background-color: var(--color-default-3);
 }
-a[button] {
+/* plain link button: <a button> (a valued variant like button="primary" keeps its own colors) */
+a[button=""] {
   color: var(--color-primary);
   background-color: transparent;
+  text-decoration: none;
+}
+
+a[button] {
   text-decoration: none;
 }
 
@@ -18,7 +23,7 @@ button:hover, button:focus,
 [button]:hover, [button]:focus {
   background-color: var(--color-default-2);
 }
-a[button]:hover, a[button]:focus {
+a[button=""]:hover, a[button=""]:focus {
   text-decoration: none;
 }
 
@@ -29,7 +34,7 @@ a[button]:hover, a[button]:focus {
 
 
 {% for name, value in COLOR %}
-{% if name == 'light' %}
+{% if name in ['light', 'white'] %}
 [button~="{{ name }}"] {
   background-color: var(--color-{{ name }});
   color: black;
