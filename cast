@@ -152,6 +152,18 @@ Chanter::cast('build-clip', function() {
   });
 }, 'Build dist/exura-clip.css (emoji)');
 
+
+Chanter::cast(
+  arg: 'watch',
+  echo: 'observe change in repo then trigger build',
+  execute: function() {
+    Specter::observer('src', function() {
+      Chanter::cast('build')();
+    });
+  }
+);
+
+
 /**
  * V E R S I O N
  * The version lives in `const VERSION` (this runite edits itself);

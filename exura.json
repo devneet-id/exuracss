@@ -120,7 +120,7 @@
   },
 
   "CARD": {
-    "default": "light",
+    "default": "dark",
     "primary": "light",
     "secondary": "light",
     "dark": "light",

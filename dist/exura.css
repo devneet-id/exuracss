@@ -617,98 +617,104 @@ dd {
   margin-bottom: var(--size-pm-2);
 }
 button, [button] {
-  letter-spacing: .04rem;
-  border: 0px solid transparent;
+  letter-spacing: .01rem;
+  border: 0;
   padding: var(--size-pm-1) var(--size-pm-2);
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
-  margin-bottom: 0.3rem;
+  margin-bottom: .3rem;
   color: inherit;
   background-color: var(--color-default-3);
-}
-/* plain link button: <a button> (a valued variant like button="primary" keeps its own colors) */
-a[button=""] {
-  color: var(--color-primary);
-  background-color: transparent;
-  text-decoration: none;
-}
-a[button] {
-  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .10);
+  transition: box-shadow .15s ease;
 }
 button:hover, button:focus,
 [button]:hover, [button]:focus {
-  background-color: var(--color-default-2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .14);
 }
-a[button=""]:hover, a[button=""]:focus {
+/* Link button */
+a[button] {
   text-decoration: none;
 }
+a[button=""] {
+  color: var(--color-primary);
+  background-color: transparent;
+  box-shadow: none;
+}
+/* Unstyled button */
 [button~="none"] {
   padding: 0;
-  background-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  transition: none;
 }
-
+[button~="none"]:hover,
+[button~="none"]:focus {
+  box-shadow: none;
+}
+/* Color variants */
 [button~="default"] {
   background-color: var(--color-default);
   color: white;
-  box-shadow: 0 3px 5px 0 var(--color-default-3);
+  box-shadow: 0 1px 3px var(--color-default-3);
 }
-[button~="default"]:hover, [button~="default"]:focus {
-  background-color: var(--color-default-8) !important;
-  box-shadow: 0 4px 10px 0 var(--color-default-6);
+[button~="default"]:hover,
+[button~="default"]:focus {
+  box-shadow: 0 3px 5px var(--color-default-3);
 }
 [button~="primary"] {
   background-color: var(--color-primary);
   color: white;
-  box-shadow: 0 3px 5px 0 var(--color-primary-3);
+  box-shadow: 0 1px 3px var(--color-primary-3);
 }
-[button~="primary"]:hover, [button~="primary"]:focus {
-  background-color: var(--color-primary-8) !important;
-  box-shadow: 0 4px 10px 0 var(--color-primary-6);
+[button~="primary"]:hover,
+[button~="primary"]:focus {
+  box-shadow: 0 3px 5px var(--color-primary-3);
 }
 [button~="secondary"] {
   background-color: var(--color-secondary);
   color: white;
-  box-shadow: 0 3px 5px 0 var(--color-secondary-3);
+  box-shadow: 0 1px 3px var(--color-secondary-3);
 }
-[button~="secondary"]:hover, [button~="secondary"]:focus {
-  background-color: var(--color-secondary-8) !important;
-  box-shadow: 0 4px 10px 0 var(--color-secondary-6);
+[button~="secondary"]:hover,
+[button~="secondary"]:focus {
+  box-shadow: 0 3px 5px var(--color-secondary-3);
 }
 [button~="dark"] {
   background-color: var(--color-dark);
   color: white;
-  box-shadow: 0 3px 5px 0 var(--color-dark-3);
+  box-shadow: 0 1px 3px var(--color-dark-3);
 }
-[button~="dark"]:hover, [button~="dark"]:focus {
-  background-color: var(--color-dark-8) !important;
-  box-shadow: 0 4px 10px 0 var(--color-dark-6);
+[button~="dark"]:hover,
+[button~="dark"]:focus {
+  box-shadow: 0 3px 5px var(--color-dark-3);
 }
 [button~="light"] {
   background-color: var(--color-light);
   color: black;
-  box-shadow: 0 3px 5px 0 var(--color-light-3);
+  box-shadow: 0 1px 3px var(--color-light-3);
 }
-[button~="light"]:hover, [button~="light"]:focus {
-  background-color: var(--color-light-8) !important;
-  box-shadow: 0 4px 10px 0 var(--color-light-6);
+[button~="light"]:hover,
+[button~="light"]:focus {
+  box-shadow: 0 3px 5px var(--color-light-3);
 }
 [button~="white"] {
   background-color: var(--color-white);
   color: black;
-  box-shadow: 0 3px 5px 0 var(--color-white-3);
+  box-shadow: 0 1px 3px var(--color-white-3);
 }
-[button~="white"]:hover, [button~="white"]:focus {
-  background-color: var(--color-white-8) !important;
-  box-shadow: 0 4px 10px 0 var(--color-white-6);
+[button~="white"]:hover,
+[button~="white"]:focus {
+  box-shadow: 0 3px 5px var(--color-white-3);
 }
 [button~="black"] {
   background-color: var(--color-black);
   color: white;
-  box-shadow: 0 3px 5px 0 var(--color-black-3);
+  box-shadow: 0 1px 3px var(--color-black-3);
 }
-[button~="black"]:hover, [button~="black"]:focus {
-  background-color: var(--color-black-8) !important;
-  box-shadow: 0 4px 10px 0 var(--color-black-6);
+[button~="black"]:hover,
+[button~="black"]:focus {
+  box-shadow: 0 3px 5px var(--color-black-3);
 }
 /* CARD ///////// */
 
@@ -716,47 +722,47 @@ a[button=""]:hover, a[button=""]:focus {
   padding: var(--size-pm-1) var(--size-pm-2);
 }
 [card="default"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default);
 }
 [card="default:1"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-1);
 }
 [card="default:2"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-2);
 }
 [card="default:3"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-3);
 }
 [card="default:4"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-4);
 }
 [card="default:5"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-5);
 }
 [card="default:6"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-6);
 }
 [card="default:7"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-7);
 }
 [card="default:8"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-8);
 }
 [card="default:9"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-9);
 }
 [card="default:10"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   background-color: var(--color-default-10);
 }
 [card="primary"] {
@@ -4601,7 +4607,6 @@ table th {
   font-size: 1.1rem;
 }
 table tbody tr:hover {
-  cursor: pointer;
   background-color: var(--color-default-1);
 }
 [table="ring"] {

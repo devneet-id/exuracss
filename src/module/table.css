@@ -15,7 +15,6 @@ table th {
   font-size: 1.1rem;
 }
 table tbody tr:hover {
-  cursor: pointer;
   background-color: var(--color-default-1);
 }
 
