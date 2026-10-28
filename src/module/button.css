@@ -27,6 +27,10 @@ a[button=""] {
   box-shadow: none;
 }
 
+/* Sizes */
+[button~="sm"] { padding: var(--size-pm-0-5) var(--size-pm-1-5); font-size: var(--text-small); }
+[button~="lg"] { padding: var(--size-pm-1-5) var(--size-pm-3); font-size: var(--text-h5); }
+
 /* Unstyled button */
 [button~="none"] {
   padding: 0;
@@ -40,16 +44,35 @@ a[button=""] {
   box-shadow: none;
 }
 
-/* Color variants */
+/* Color variants
+ * light/white get dark text, dark/black light text — both follow dark-mode reversal;
+ * every other color keeps a fixed white text. */
 {% for name, value in COLOR %}
+{% set ink = 'var(--color-fixed-white)' %}{% if name in ['light', 'white'] %}{% set ink = 'var(--color-black)' %}{% endif %}{% if name in ['dark', 'black'] %}{% set ink = 'var(--color-white)' %}{% endif %}
 [button~="{{ name }}"] {
   background-color: var(--color-{{ name }});
-  color: {% if name in ['light', 'white'] %}black{% else %}white{% endif %};
+  color: {{ ink }};
   box-shadow: 0 1px 3px var(--color-{{ name }}-3);
 }
 
 [button~="{{ name }}"]:hover,
 [button~="{{ name }}"]:focus {
   box-shadow: 0 3px 5px var(--color-{{ name }}-3);
+}
+{% endfor %}
+
+
+{% for screen, value in SCREEN %}
+@media (min-width: {{ value }}) {
+
+  [{{ screen }}\:button~="sm"] { padding: var(--size-pm-0-5) var(--size-pm-1-5); font-size: var(--text-small); }
+  [{{ screen }}\:button~="md"] { padding: var(--size-pm-1) var(--size-pm-2); font-size: inherit; }
+  [{{ screen }}\:button~="lg"] { padding: var(--size-pm-1-5) var(--size-pm-3); font-size: var(--text-h5); }
+
+{% for name, value in COLOR %}
+{% set ink = 'var(--color-fixed-white)' %}{% if name in ['light', 'white'] %}{% set ink = 'var(--color-black)' %}{% endif %}{% if name in ['dark', 'black'] %}{% set ink = 'var(--color-white)' %}{% endif %}
+  [{{ screen }}\:button~="{{ name }}"] { background-color: var(--color-{{ name }}); color: {{ ink }}; box-shadow: 0 1px 3px var(--color-{{ name }}-3); }
+{% endfor %}
+
 }
 {% endfor %}
