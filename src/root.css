@@ -29,4 +29,30 @@
 {% for item in SIZE_PM %}
   --size-pm-{{ item[1] }}: {{ item[2] }};
 {% endfor %}
+
+  /* fixed text on colored surfaces (never reversed) */
+  --color-fixed-light: {{ COLOR.light }};
+  --color-fixed-dark: {{ COLOR.dark }};
+  --color-fixed-white: {{ COLOR.white }};
+  --color-fixed-black: {{ COLOR.black }};
+}
+
+/* dark mode = reversal: light <-> dark, white <-> black (with shades).
+ * Works on <body dark> or any element; [light] brings the normal pairs back inside it. */
+[dark] {
+{% for pair in [['light', 'dark'], ['dark', 'light'], ['white', 'black'], ['black', 'white']] %}
+  --color-{{ pair[0] }}: {{ COLOR[pair[1]] }};
+{% for i in 1..10 %}
+  --color-{{ pair[0] }}-{{ i }}: {{ hexToRgba(COLOR[pair[1]], i / 10) }};
+{% endfor %}
+{% endfor %}
+}
+
+[light] {
+{% for name in ['light', 'dark', 'white', 'black'] %}
+  --color-{{ name }}: {{ COLOR[name] }};
+{% for i in 1..10 %}
+  --color-{{ name }}-{{ i }}: {{ hexToRgba(COLOR[name], i / 10) }};
+{% endfor %}
+{% endfor %}
 }
