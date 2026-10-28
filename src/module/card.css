@@ -1,20 +1,36 @@
 
 /* CARD ///////// */
 
-
 [card] {
   padding: var(--size-pm-1) var(--size-pm-2);
 }
+[card~="sm"] { padding: var(--size-pm-0-5) var(--size-pm-1); }
+[card~="lg"] { padding: var(--size-pm-2) var(--size-pm-3); }
 
+{# light/dark/white/black follow dark-mode reversal; other colors keep a fixed text color #}
 {% for root, invert in CARD %}
-[card="{{ root }}"] {
-  color: var(--color-{{ invert }});
+{% if root in ['light', 'dark', 'white', 'black'] %}{% set ink = 'var(--color-' ~ invert ~ ')' %}{% else %}{% set ink = 'var(--color-fixed-' ~ invert ~ ')' %}{% endif %}
+[card~="{{ root }}"] {
+  color: {{ ink }};
   background-color: var(--color-{{ root }});
 }
 {% for i in 1..10 %}
-[card="{{ root }}:{{ i }}"] {
-  color: var(--color-{{ invert }});
+[card~="{{ root }}:{{ i }}"] {
+  color: {{ ink }};
   background-color: var(--color-{{ root }}-{{ i }});
 }
 {% endfor %}
+{% endfor %}
+
+
+/* responsive: size only (colors are not responsive) */
+{% for screen, value in SCREEN %}
+@media (min-width: {{ value }}) {
+
+  [{{ screen }}\:card~="sm"] { padding: var(--size-pm-0-5) var(--size-pm-1); }
+  [{{ screen }}\:card~="md"] { padding: var(--size-pm-1) var(--size-pm-2); }
+  [{{ screen }}\:card~="lg"] { padding: var(--size-pm-2) var(--size-pm-3); }
+
+
+}
 {% endfor %}

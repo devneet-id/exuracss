@@ -5,6 +5,9 @@
 [list]:not(input) {
   list-style-position: outside;
   padding: 0;
+}
+/* layout stays weaker than utilities (flex="d:row", md:flex…) */
+:where([list]:not(input)) {
   display: flex;
   flex-direction: column;
 }
@@ -15,6 +18,9 @@
   padding: var(--size-pm-1) var(--size-pm-1);
   margin-bottom: 0;
 }
+[list~="sm"] > * { padding: var(--size-pm-0-5) var(--size-pm-1); }
+[list~="lg"] > * { padding: var(--size-pm-2) var(--size-pm-2); }
+
 [list~="wrap"] {
   flex-wrap: wrap;
 }
@@ -38,3 +44,36 @@
 [list~="ring:x"] > *:nth-last-child(1) {
   border-right: none;
 }
+
+/* line color: list="ring:y ring:primary-3" */
+{% for root, value in COLOR %}
+[list~="ring:{{ root }}"] > * { border-color: var(--color-{{ root }}); }
+{% for i in 1..10 %}
+[list~="ring:{{ root }}-{{ i }}"] > * { border-color: var(--color-{{ root }}-{{ i }}); }
+{% endfor %}
+{% endfor %}
+
+
+{% for screen, value in SCREEN %}
+@media (min-width: {{ value }}) {
+
+  [{{ screen }}\:list~="sm"] > * { padding: var(--size-pm-0-5) var(--size-pm-1); }
+  [{{ screen }}\:list~="md"] > * { padding: var(--size-pm-1) var(--size-pm-1); }
+  [{{ screen }}\:list~="lg"] > * { padding: var(--size-pm-2) var(--size-pm-2); }
+
+  [{{ screen }}\:list~="wrap"] { flex-wrap: wrap; }
+  [{{ screen }}\:list~="nowrap"] { flex-wrap: nowrap; }
+
+  [{{ screen }}\:list~="dir:y"] { flex-direction: column !important; }
+  [{{ screen }}\:list~="dir:x"] { flex-direction: row !important; }
+
+  /* lines keep the color from list="ring:primary-3"; default grey otherwise */
+  :where([{{ screen }}\:list~="ring:x"], [{{ screen }}\:list~="ring:y"]) > * { border-color: var(--color-default-2); }
+  [{{ screen }}\:list~="ring:y"] > * { border-style: none none solid none; border-width: 0 0 1px 0; }
+  [{{ screen }}\:list~="ring:y"] > *:nth-last-child(1) { border-bottom-style: none; }
+  [{{ screen }}\:list~="ring:x"] > * { border-style: none solid none none; border-width: 0 1px 0 0; }
+  [{{ screen }}\:list~="ring:x"] > *:nth-last-child(1) { border-right-style: none; }
+  [{{ screen }}\:list~="ring:none"] > * { border-style: none; }
+
+}
+{% endfor %}
