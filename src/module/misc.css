@@ -25,6 +25,22 @@
 [misc~="ws:pre-line"] { white-space: pre-line; }
 [misc~="ws:pre-wrap"] { white-space: pre-wrap; }
 
+[misc~="o:auto"] { overflow: auto; }
+[misc~="o:hidden"] { overflow: hidden; }
+[misc~="o:scroll"] { overflow: scroll; }
+[misc~="o:visible"] { overflow: visible; }
+[misc~="o:clip"] { overflow: clip; }
+[misc~="ox:auto"] { overflow-x: auto; }
+[misc~="ox:hidden"] { overflow-x: hidden; }
+[misc~="ox:scroll"] { overflow-x: scroll; }
+[misc~="ox:visible"] { overflow-x: visible; }
+[misc~="ox:clip"] { overflow-x: clip; }
+[misc~="oy:auto"] { overflow-y: auto; }
+[misc~="oy:hidden"] { overflow-y: hidden; }
+[misc~="oy:scroll"] { overflow-y: scroll; }
+[misc~="oy:visible"] { overflow-y: visible; }
+[misc~="oy:clip"] { overflow-y: clip; }
+
 
 {% for screen, value in SCREEN %}
 @media (min-width: {{ value }}) {
@@ -51,6 +67,22 @@
   [{{ screen }}\:misc~="ws:pre"] { white-space: pre; }
   [{{ screen }}\:misc~="ws:pre-line"] { white-space: pre-line; }
   [{{ screen }}\:misc~="ws:pre-wrap"] { white-space: pre-wrap; }
+
+  [{{ screen }}\:misc~="o:auto"] { overflow: auto; }
+  [{{ screen }}\:misc~="o:hidden"] { overflow: hidden; }
+  [{{ screen }}\:misc~="o:scroll"] { overflow: scroll; }
+  [{{ screen }}\:misc~="o:visible"] { overflow: visible; }
+  [{{ screen }}\:misc~="o:clip"] { overflow: clip; }
+  [{{ screen }}\:misc~="ox:auto"] { overflow-x: auto; }
+  [{{ screen }}\:misc~="ox:hidden"] { overflow-x: hidden; }
+  [{{ screen }}\:misc~="ox:scroll"] { overflow-x: scroll; }
+  [{{ screen }}\:misc~="ox:visible"] { overflow-x: visible; }
+  [{{ screen }}\:misc~="ox:clip"] { overflow-x: clip; }
+  [{{ screen }}\:misc~="oy:auto"] { overflow-y: auto; }
+  [{{ screen }}\:misc~="oy:hidden"] { overflow-y: hidden; }
+  [{{ screen }}\:misc~="oy:scroll"] { overflow-y: scroll; }
+  [{{ screen }}\:misc~="oy:visible"] { overflow-y: visible; }
+  [{{ screen }}\:misc~="oy:clip"] { overflow-y: clip; }
 
 }
 {% endfor %}
